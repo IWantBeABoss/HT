@@ -20,7 +20,7 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
-  base:'/HT/',
+  base:process.env.NODE_ENV === 'production' ? '/HT/' : '/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
